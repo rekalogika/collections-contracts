@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Rekalogika\Contracts\Collections;
 
 use Doctrine\Common\Collections\ReadableCollection;
+use Rekalogika\Contracts\Collections\Exception\NotFoundException;
 use Rekalogika\Contracts\Rekapager\PageableInterface;
 
 /**
@@ -24,5 +25,12 @@ use Rekalogika\Contracts\Rekapager\PageableInterface;
  */
 interface ReadableRecollection extends PageableInterface, ReadableCollection
 {
+    /**
+     * @param TKey $key
+     * @return T
+     * @throws NotFoundException
+     */
+    public function getOrFail(string|int $key): mixed;
+
     public function refreshCount(): void;
 }
