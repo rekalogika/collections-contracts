@@ -16,9 +16,9 @@ namespace Rekalogika\Contracts\Collections;
 /**
  * @template TKey of array-key
  * @template T
- * @extends SafeReadableRecollection<TKey,T>
+ * @extends LargeReadableRecollection<TKey,T>
  */
-interface SafeRecollection extends SafeReadableRecollection
+interface LargeRecollection extends LargeReadableRecollection
 {
     /**
      * @param T $element
